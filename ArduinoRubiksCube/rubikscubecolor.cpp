@@ -1,0 +1,1 @@
+#include "rubikscubecolor.h"

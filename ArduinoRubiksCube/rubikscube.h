@@ -3,10 +3,9 @@
 #include <iosfwd>
 #include <string>
 #include <vector>
-
+#include "rubikscubecolor.h"
+#include "rubikscubeside.h"
 enum class rotation { clock_wise, counter_clock_wise };
-enum class color { red, orange, yellow, green, blue, violet };
-enum class side { front, back, left, right, top, bottom };
 
 /*
 

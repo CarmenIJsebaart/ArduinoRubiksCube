@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += sfmlmain.cpp \
     sfmlrubikscube.cpp \
-    rubikscube.cpp
+    rubikscube.cpp \
+    rubikscubeside.cpp \
+    rubikscubecolor.cpp
 
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -Weffc++
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
@@ -15,5 +17,7 @@ qtcAddDeployment()
 
 HEADERS += \
     sfmlrubikscube.h \
-    rubikscube.h
+    rubikscube.h \
+    rubikscubeside.h \
+    rubikscubecolor.h
 
