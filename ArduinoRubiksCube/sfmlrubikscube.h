@@ -14,6 +14,8 @@ public:
 
   void draw(sf::RenderWindow& window) const noexcept;
 
+  void turn(const side any_side, rotation any_rotation) noexcept;
+
 private:
   rubiks_cube m_rubiks_cube;
   side m_view;

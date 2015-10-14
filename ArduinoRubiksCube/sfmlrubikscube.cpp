@@ -180,7 +180,6 @@ void sfml_rubiks_cube::draw(sf::RenderWindow& window) const noexcept {
   window.draw(s_j);
   window.draw(s_k);
   window.draw(s_l);
-
 }
 
 sf::Color to_sfml_color(const color any_color) noexcept
@@ -195,4 +194,9 @@ sf::Color to_sfml_color(const color any_color) noexcept
   }
   assert(!"Should not get here");
   throw std::logic_error("to_sfml_color: unknown color");
+}
+
+void sfml_rubiks_cube::turn(const side any_side, rotation any_rotation) noexcept
+{
+  m_rubiks_cube.turn(any_side,any_rotation);
 }
