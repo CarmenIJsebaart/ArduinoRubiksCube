@@ -286,8 +286,8 @@ void rubiks_cube::turn_left(rotation any_rotation) noexcept
     //Do side
     const color side_squares[8] =
     {
-      get_color(side::top   ,1,0), //[0]
-      get_color(side::top   ,1,1), //[1]
+      get_color(side::top   ,0,0), //[0]
+      get_color(side::top   ,1,0), //[1]
       get_color(side::front ,0,0), //[2]
       get_color(side::front ,1,0), //[3]
       get_color(side::bottom,0,0), //[4]
@@ -295,8 +295,8 @@ void rubiks_cube::turn_left(rotation any_rotation) noexcept
       get_color(side::back  ,0,0), //[6]
       get_color(side::back  ,1,0)  //[7]
     };
-    set_color(side::top   ,1,0,side_squares[6]);
-    set_color(side::top   ,1,1,side_squares[7]);
+    set_color(side::top   ,0,0,side_squares[6]);
+    set_color(side::top   ,1,0,side_squares[7]);
     set_color(side::front ,0,0,side_squares[0]);
     set_color(side::front ,1,0,side_squares[1]);
     set_color(side::bottom,0,0,side_squares[2]);
@@ -325,8 +325,8 @@ void rubiks_cube::turn_left(rotation any_rotation) noexcept
     //Do side
     const color side_squares[8] =
     {
-      get_color(side::top   ,1,0), //[0]
-      get_color(side::top   ,1,1), //[1]
+      get_color(side::top   ,0,0), //[0]
+      get_color(side::top   ,1,0), //[1]
       get_color(side::front ,0,0), //[2]
       get_color(side::front ,1,0), //[3]
       get_color(side::bottom,0,0), //[4]
@@ -334,8 +334,8 @@ void rubiks_cube::turn_left(rotation any_rotation) noexcept
       get_color(side::back  ,0,0), //[6]
       get_color(side::back  ,1,0)  //[7]
     };
-    set_color(side::top   ,1,0,side_squares[2]);
-    set_color(side::top   ,1,1,side_squares[3]);
+    set_color(side::top   ,0,0,side_squares[2]);
+    set_color(side::top   ,1,0,side_squares[3]);
     set_color(side::front ,0,0,side_squares[4]);
     set_color(side::front ,1,0,side_squares[5]);
     set_color(side::bottom,0,0,side_squares[6]);
