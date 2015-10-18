@@ -179,6 +179,75 @@ int main()
   cube.turn(side::bottom,rotation::counter_clock_wise); //When turning 4 time, original state is restored
   assert(cube == rubiks_cube() && "After doing this, Cube is identical again to a new Rubik's cube");
 
+  //Check in detail a clockwise turn at the front side
+/*
+
+           +---+---+                                  +---+---+
+           |0.0|0.1|                                  |       |
+           |   |   |                                  |       |
+           +---+---+                                  +  top  +
+           |1.0|1.1|                                  |       |
+           |   |   |                                  |       |
+   +---+---+---+---+---+---+                  +---+---+---+---+---+---+
+   |0.0|0.1|0.0|0.1|0.0|0.1|                  |       |       |       |
+   |   |   |   |   |   |   |                  |       |       |       |
+   +---+---+---+---+---+---+                  + left  + front + right +
+   |1.0|1.1|1.0|1.1|1.0|1.1|                  |       |       |       |
+   |   |   |   |   |   |   |                  |       |       |       |
+   +---+---+---+---+---+---+                  +---+---+---+---+---+---+
+           |0.0|0.1|                                  |       |
+           |   |   |                                  |       |
+           +---+---+                                  +bottom +
+           |1.0|1.1|                                  |       |
+           |   |   |                                  |       |
+           +---+---+                                  +---+---+
+           |0.0|0.1|                                  |       |
+           |   |   |                                  |       |
+           +---+---+                                  + back  +
+           |1.0|1.1|                                  |       |
+           |   |   |                                  |       |
+           +---+---+                                  +---+---+
+
+*/
+
+  //Turn front side
+  {
+    rubiks_cube r;
+    assert(cube.get_color(side::front,0,0) == color::red);
+    assert(cube.get_color(side::front,0,1) == color::red);
+    assert(cube.get_color(side::front,1,0) == color::red);
+    assert(cube.get_color(side::front,1,1) == color::red);
+    assert(cube.get_color(side::right,0,0) == color::orange);
+    assert(cube.get_color(side::right,0,1) == color::orange);
+    assert(cube.get_color(side::right,1,0) == color::orange);
+    assert(cube.get_color(side::right,1,1) == color::orange);
+    assert(cube.get_color(side::left,0,0) == color::green);
+    assert(cube.get_color(side::left,0,1) == color::green);
+    assert(cube.get_color(side::left,1,0) == color::green);
+    assert(cube.get_color(side::left,1,1) == color::green);
+    assert(cube.get_color(side::top,0,0) == color::blue);
+    assert(cube.get_color(side::top,0,1) == color::blue);
+    assert(cube.get_color(side::top,1,0) == color::blue);
+    assert(cube.get_color(side::top,1,1) == color::blue);
+    assert(cube.get_color(side::bottom,0,0) == color::violet);
+    assert(cube.get_color(side::bottom,0,1) == color::violet);
+    assert(cube.get_color(side::bottom,1,0) == color::violet);
+    assert(cube.get_color(side::bottom,1,1) == color::violet);
+    r.turn(side::front,rotation::clock_wise);
+    assert(r.get_color(side::front,0,0)==color::red);
+    assert(r.get_color(side::front,0,1)==color::red);
+    assert(r.get_color(side::front,1,0)==color::red);
+    assert(r.get_color(side::front,1,1)==color::red);
+    assert(r.get_color(side::top,1,0)==color::green);
+    assert(r.get_color(side::top,1,1)==color::green);
+    assert(r.get_color(side::right,0,0)==color::blue);
+    assert(r.get_color(side::right,1,0)==color::blue);
+    assert(r.get_color(side::bottom,0,0)==color::orange);
+    assert(r.get_color(side::bottom,0,1)==color::orange);
+    assert(r.get_color(side::left,0,1)==color::violet);
+    assert(r.get_color(side::left,1,1)==color::violet);
+  }
+
   //Random shuffle the cube 20 times
   for(int i = 0; i < 20; ++i)
   {

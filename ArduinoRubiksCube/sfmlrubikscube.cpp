@@ -99,10 +99,10 @@ void sfml_rubiks_cube::draw(sf::RenderWindow& window) const noexcept {
   const auto g = m_rubiks_cube.get_color(side::top,1,0);
   const auto h = m_rubiks_cube.get_color(side::top,1,1);
 
-  const auto i = m_rubiks_cube.get_color(side::right,1,0);
-  const auto j = m_rubiks_cube.get_color(side::right,0,0);
-  const auto k = m_rubiks_cube.get_color(side::right,1,1);
-  const auto l = m_rubiks_cube.get_color(side::right,0,1);
+  const auto i = m_rubiks_cube.get_color(side::right,0,0);
+  const auto j = m_rubiks_cube.get_color(side::right,0,1);
+  const auto k = m_rubiks_cube.get_color(side::right,1,0);
+  const auto l = m_rubiks_cube.get_color(side::right,1,1);
 
 /*
 
